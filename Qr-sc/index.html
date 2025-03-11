@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ID Card Generator</h1>
+        
+        <!-- Step 1: Upload Photo or Capture -->
+        <div id="step1">
+            <h2>Step 1: Capture Photo or Upload</h2>
+            <input type="file" id="photoInput" accept="image/*">
+            <div id="cameraSection">
+                <video id="camera" autoplay playsinline></video>
+                <button id="capturePhoto">Capture Photo</button>
+            </div>
+            <canvas id="photoPreview" width="150" height="150"></canvas>
+            <button id="savePhoto">Save Photo</button>
+        </div>
+
+        <!-- Step 2: Enter Details -->
+        <div id="step2" style="display: none;">
+            <h2>Step 2: Enter Your Details</h2>
+            <input type="text" id="name" placeholder="Enter Full Name">
+            <input type="text" id="fatherName" placeholder="Enter Father's Name">
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="date" id="dob" placeholder="Date of Birth">
+            <button id="saveDetails">Save Details</button>
+        </div>
+
+        <!-- Step 3: Generate QR and Card -->
+        <div id="step3" style="display: none;">
+            <h2>Step 3: Generate ID Card</h2>
+            <div id="idCard">
+                <canvas id="cardCanvas" width="300" height="400"></canvas>
+            </div>
+            <button id="downloadCard">Download ID Card</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
